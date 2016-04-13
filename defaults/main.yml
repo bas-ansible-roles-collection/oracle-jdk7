@@ -1,0 +1,6 @@
+---
+# Default variables - inventory or playbook overrides will be respected
+
+# BARC specific variables
+oracle_jdk7_barc_role_name: oracle_jdk7
+oracle_jdk7_barc_role_version: 0.1.0
