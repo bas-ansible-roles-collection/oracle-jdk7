@@ -1,0 +1,14 @@
+---
+# Tests the Oracle JDK 8 is installed correctly
+
+- name: determine if oracle jdk 7 is installed - Ubuntu
+  command: dpkg -s {{ item }}
+  with_items:
+    - oracle-java7-installer
+  changed_when: False
+  register: oracle_jdk7_test_fact_oracle_jdk7_package_is_installed_ubuntu
+- name: assert oracle jdk 7 is installed - Ubuntu
+  assert:
+    that:
+      - "'install ok installed' in item.stdout"
+  with_items: oracle_jdk7_test_fact_oracle_jdk7_package_is_installed_ubuntu.results

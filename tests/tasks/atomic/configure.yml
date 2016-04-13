@@ -1,0 +1,37 @@
+---
+# Configures environment variables to set Java location
+
+- name: determine status of symlink for default java installation - Ubuntu
+  stat: path=/usr/java
+  register: oracle_jdk7_test_fact_default_java_symlink_ubuntu
+  when: ansible_distribution == "Ubuntu"
+- name: assert symlink for default java installation exists - Ubuntu
+  assert:
+    that: "oracle_jdk7_test_fact_default_java_symlink_ubuntu.stat.exists == true"
+  when: ansible_distribution == "Ubuntu"
+
+- name: determine status of symlink for default jre - Ubuntu
+  stat: path=/usr/java/default-java
+  register: oracle_jdk7_test_fact_default_jre_symlink_ubuntu
+  when: ansible_distribution == "Ubuntu"
+- name: assert symlink for default jre exists - Ubuntu
+  assert:
+    that: "oracle_jdk7_test_fact_default_jre_symlink_ubuntu.stat.exists == true"
+  when: ansible_distribution == "Ubuntu"
+
+- name: read global environment file
+  command: cat /etc/environment
+  changed_when: false
+  register: oracle_jdk7_test_fact_global_environment_file_contents
+
+- name: assert java_home environment variable set correctly - Ubuntu
+  assert:
+    that:
+      - "'export JAVA_HOME=/usr/lib/jvm/java-7-oracle/jre' in oracle_jdk7_test_fact_global_environment_file_contents.stdout"
+  when: ansible_distribution == "Ubuntu"
+
+- name: assert java_home environment variable set correctly - CentOS
+  assert:
+    that:
+      - "'export JAVA_HOME=/usr/java/default/jre' in oracle_jdk7_test_fact_global_environment_file_contents.stdout"
+  when: ansible_distribution == "CentOS"

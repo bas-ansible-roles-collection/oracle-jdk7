@@ -1,0 +1,30 @@
+---
+# Configures environment variables to set Java location
+
+- name: symlink default java installation - Ubuntu
+  file:
+      src=/usr/lib/jvm/java-7-oracle
+     dest=/usr/java
+    state=link
+  when: ansible_distribution == "Ubuntu"
+
+- name: symlink default jre - Ubuntu
+  file:
+      src=/usr/lib/jvm/java-7-oracle/jre
+     dest=/usr/java/default-java
+    state=link
+  when: ansible_distribution == "Ubuntu"
+
+- name: set java_home environment variable - Ubuntu
+  lineinfile:
+     dest='/etc/environment'
+     line="export JAVA_HOME=/usr/lib/jvm/java-7-oracle/jre"
+    state=present
+  when: ansible_distribution == "Ubuntu"
+
+- name: set java_home environment variable - CentOS
+  lineinfile:
+     dest='/etc/environment'
+     line="export JAVA_HOME=/usr/java/default/jre"
+    state=present
+  when: ansible_distribution == "CentOS"
