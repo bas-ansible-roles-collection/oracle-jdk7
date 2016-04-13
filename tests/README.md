@@ -1,5 +1,4 @@
-
-Oracle JDK 7 (oracle-jdk7) - Testing
+# Oracle JDK 7 (`oracle-jdk7`) - Testing
 
 ## Overview
 
@@ -17,11 +16,11 @@ multiple environments.
 
 The *Testing* environment tests a single scenario:
 
-* Installs Oracle JDK 7 with related packages and ensures Java is available
+* Installs Oracle Java JDK 7 and ensures Java is available
 
 The *Local Testing* environment tests multiple scenarios:
 
-1. ...
+1. Installs Oracle Java JDK 7 and ensures Java is available
 
 **Note:** *Local Testing* environments test scenarios on all operating systems this role supports. Services providing
 *Testing* environments may limit which operating system are available (e.g. SemaphoreCI only supports Ubuntu Trusty).

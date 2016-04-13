@@ -1,0 +1,20 @@
+---
+# Installs the Oracle JDK 8
+
+- name: add oracle java PPA - Ubuntu
+  apt_repository:
+            repo='ppa:webupd8team/java'
+    update_cache=yes
+           state=present
+
+- name: accept the oracle end-user license agreement - Ubuntu
+  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+  changed_when: false
+
+- name: install oracle jdk 7 - Ubuntu
+  apt:
+                 pkg={{ item }}
+        update_cache=yes
+               state=present
+  with_items:
+    - oracle-java7-installer

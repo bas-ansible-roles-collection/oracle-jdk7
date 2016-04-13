@@ -1,0 +1,8 @@
+---
+# Installs the Oracle JDK 8
+
+- include: install-CentOS.yml
+  when: ansible_distribution == "CentOS"
+
+- include: install-Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"

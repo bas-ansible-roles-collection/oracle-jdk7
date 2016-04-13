@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Felix Fennell
-  description: Installs Oracle Java Development Kit (JRE) 7 and related packages
+  description: Installs Oracle Java Development Kit (JRE) 7
   company: British Antarctic Survey
 
   issue_tracker_url: https://jira.ceh.ac.uk/browse/BARC

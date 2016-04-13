@@ -1,5 +1,2 @@
 # Provisioning tool directories
 tests/provisioning/site-testing-local/.vagrant
-
-# Pristine setup script
-setup.sh

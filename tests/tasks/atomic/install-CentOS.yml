@@ -1,0 +1,4 @@
+---
+# Tests the Oracle JDK 8 is installed correctly
+
+# This is not possible to do - but is verified by the Java functional test

@@ -1,5 +1,15 @@
 ---
-# ...
+# Installs Oracle JDK 7 and related packages
+
+- include: install.yml
+  tags:
+    - BARC_INSTALL
+    - BARC_INSTALL_PACKAGES
+
+- include: configure.yml
+  tags:
+    - BARC_CONFIGURE
+    - BARC_CONFIGURE_PACKAGE
 
 - include: register-role.yml
   tags:

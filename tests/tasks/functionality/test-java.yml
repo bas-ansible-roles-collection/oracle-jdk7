@@ -1,0 +1,20 @@
+---
+# Tests java is usable
+
+- name: get java version
+  command: java -version
+  changed_when: false
+  register: oracle_jdk7_test_fact_java_is_available
+- name: assert java 7 is available
+  assert:
+    that:
+      - "'1.7' in oracle_jdk7_test_fact_java_is_available.stderr"
+
+- name: echo java_home environment variable
+  command: echo $JAVA_HOME
+  changed_when: false
+  register: oracle_jdk7_test_fact_java_home_is_set
+- name: assert java_home environment variable is set
+  assert:
+    that:
+      - "oracle_jdk7_test_fact_java_home_is_set.stdout != ''"

@@ -1,17 +1,20 @@
-# Oracle JDK 7 (oracle-jdk7)
+# Oracle JDK 7 (`oracle-jdk7`)
  
 Master: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/oracle-jdk7/branches/master/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/oracle-jdk7)
 Develop: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/oracle-jdk7/branches/develop/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/oracle-jdk7)
  
-Installs Oracle Java Development Kit (JRE) 7 and related packages
+Installs Oracle Java Development Kit (JRE) 7
  
 **Part of the BAS Ansible Role Collection (BARC)**
  
-**This role uses version 0.2.0 of the https://github.com/bas-ansible-roles-collection/oracle-jdk7.git flavour of the BAS Base Project - Pristine**.
+**This role uses version 0.2.0 of the BARC flavour of the BAS Base Project - Pristine**.
  
+**NOTE:** By using this role you are agreeing to the terms of the Oracle license agreement for the Oracle Java JDK
+
 ## Overview
  
-* ...
+* Installs the Oracle Java JDK version 7
+* Sets this JDK as the default JRE
  
 ## Quality Assurance
  
@@ -55,6 +58,17 @@ If you do not want these facts to be set by this role, you **MUST** skip the **B
 More information is available in the 
 [BARC General Documentation](https://antarctica.hackpad.com/BARC-Overview-and-Policies-SzcHzHvitkt#:h=Role-Manifest)
  
+### Java version
+
+This role will install Oracle Java 7 update 80 in both CentOS and Ubuntu.
+
+### Default Java JRE
+
+THis role will set the default system JRE to the Oracle Java 7 JDK by setting:
+
+* Symbolic links to conventional locations in each respective operating system supported by this role
+* Setting the value of the `JAVA_HOME` environment variable, available system wide
+
 ### Typical playbook
  
 ```yaml
@@ -97,15 +111,13 @@ More information is available in the
 ### Issue tracking
  
 Issues, bugs, improvements, questions, suggestions and other tasks related to this package are managed through the 
-[BAS Ansible Roles Collection](
-https://jira.ceh.ac.uk/projects/BARC) (BARC) project on Jira.
+[BAS Ansible Roles Collection](https://jira.ceh.ac.uk/projects/BARC) (BARC) project on Jira.
  
 This service is currently only available to BAS or NERC staff, although external collaborators can be added on request.
 See our contributing policy for more information.
  
 More information is also available in the
-[BARC General Documentation](
-https://antarctica.hackpad.com/BARC-Overview-and-Policies-SzcHzHvitkt#:h=Issue-Tracking)
+[BARC General Documentation](https://antarctica.hackpad.com/BARC-Overview-and-Policies-SzcHzHvitkt#:h=Issue-Tracking)
  
 ### Source code
  
