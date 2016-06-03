@@ -1,5 +1,5 @@
 ---
-# Installs the Oracle JDK 8
+# Installs the Oracle JDK 7
 
 - name: add oracle java PPA - Ubuntu
   apt_repository:

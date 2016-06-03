@@ -7,6 +7,9 @@ Remember: Make sure to update `oracle_jdk7_barc_role_version` variable when a ne
  
 ## [Unreleased][unreleased]
 
+### Fixed
+
+* Inaccurate comments in task files, this role is for Java 7 not 8
 ## 0.1.0 - 13/04/2016
 
 ### Added
