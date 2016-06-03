@@ -7,6 +7,13 @@ Remember: Make sure to update `oracle_jdk7_barc_role_version` variable when a ne
  
 ## [Unreleased][unreleased]
 
+## 0.1.1 - 03/05/2016
+
+### Fixed
+
+* Inaccurate comments in task files, this role is for Java 7 not 8
+* `wget` dependency is now checked for an installed if necessary as it is missing on some CentOS environments [BARC-124]
+
 ## 0.1.0 - 13/04/2016
 
 ### Added

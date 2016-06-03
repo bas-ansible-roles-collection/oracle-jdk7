@@ -1,4 +1,14 @@
 ---
-# Tests the Oracle JDK 8 is installed correctly
+# Tests the Oracle JDK 7 is installed correctly
 
-# This is not possible to do - but is verified by the Java functional test
+- name: determine if oracle installer dependencies are installed - CentOS
+  command: rpm -qa
+  changed_when: False
+  register: oracle_jdk7_test_fact_installer_dependencies_are_available
+- name: assert oracle installer dependencies are installed
+  assert:
+    that:
+      - "'wget' in oracle_jdk7_test_fact_installer_dependencies_are_available.stdout"
+
+# It is not possible to check if Java is installed as now package is installed
+# - however this is verified by the Java functional test

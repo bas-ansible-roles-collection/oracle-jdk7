@@ -1,5 +1,5 @@
 ---
-# Tests the Oracle JDK 8 is installed correctly
+# Tests the Oracle JDK 7 is installed correctly
 
 - name: determine if oracle jdk 7 is installed - Ubuntu
   command: dpkg -s {{ item }}
