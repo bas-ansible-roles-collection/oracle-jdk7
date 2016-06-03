@@ -1,6 +1,14 @@
 ---
 # Installs the Oracle JDK 7
 
+- name: install prerequisites for downloading the oracle installer - CentOS
+  yum:
+                 pkg={{ item }}
+        update_cache=yes
+               state=present
+  with_items:
+    - wget
+
 - name: determine if java is installed - CentOS
   command: java -version
   ignore_errors: true
